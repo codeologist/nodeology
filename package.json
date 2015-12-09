@@ -28,6 +28,7 @@
     "body-parser": "1.14.1",
     "express": "4.13.3",
     "ioredis": "1.11.1",
+    "jade": "1.11.0",
     "load-grunt-tasks": "3.3.0",
     "throng": "1.0.1",
     "uuid": "2.0.1",

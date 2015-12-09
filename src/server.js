@@ -13,6 +13,8 @@
         winston.info("STARTING NODEOLOGY WEBSITE");
 
         var app = express();
+        app.set('view engine', 'jade');
+        app.set('views', 'src/tmpl');
         app.use(bodyParser.urlencoded({ extended: false }));
         app.use(bodyParser.json());
 

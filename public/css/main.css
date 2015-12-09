@@ -1,0 +1,25 @@
+
+    html {
+        font-size: 62.5%;
+    }
+    body {
+       font-family: arial;
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 15rem;
+
+        text-rendering: optimizelegibility;
+        -ms-word-break:   break-all;
+        word-break:       break-word;
+        word-wrap:        break-word;
+        -webkit-hyphens:  auto;
+        -moz-hyphens:  auto;
+        hyphens:  auto;
+
+    }
+
+    p {
+        font-size: 5rem;
+    }
