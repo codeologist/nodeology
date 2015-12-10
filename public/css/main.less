@@ -1,0 +1,70 @@
+
+  @import "config";
+  @import "elements";
+
+  html{
+    font-size: 62.5%;
+  }
+
+  body {
+    padding:0;
+    margin:0;
+    font-family: "Arial";
+    padding-top: 5.4rem;
+  }
+
+  h1 {
+    position: fixed;
+    width: 100%;
+    top:0;
+    left:0;
+    padding:0;
+    margin:0;
+    font-size: 3rem;
+    color: @color-primary-0;
+    border-bottom: 1px solid black;
+    background-color: rgba( 255,255,255,.9);
+    font-weight: 500;
+    line-height: 1.8;
+    text-indent: 3rem;
+
+    .drop-shadow( 0, 3 ,5, .5);
+  }
+
+  #login{
+    position: fixed;
+    display: inline-block;
+    top:0;
+    left: auto;
+    right:1rem;
+    font-weight:bold;
+    font-size: 1.2rem;
+    color: black;
+    line-height:  5.4rem;
+
+    label {
+      padding: .5rem;
+      font-size:1.2rem;
+    }
+
+    input, button {
+      border: 2px solid @color-primary-0;
+      padding: .3rem;
+      font-size: 1.5rem;
+      color: @color-primary-0;
+      margin: 0 1rem 0 0;
+      background-color: white;
+    }
+    button {
+      padding: .3rem 1rem;
+    }
+
+  }
+
+  p {
+    font-size: 4rem;
+    color: black;
+    padding: 2rem 3rem;
+    letter-spacing: 1px;
+    margin: 2rem;
+  }

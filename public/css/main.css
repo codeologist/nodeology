@@ -1,25 +1,76 @@
-
-    html {
-        font-size: 62.5%;
-    }
-    body {
-       font-family: arial;
-        padding: 2rem;
-    }
-
-    h1 {
-        font-size: 15rem;
-
-        text-rendering: optimizelegibility;
-        -ms-word-break:   break-all;
-        word-break:       break-word;
-        word-wrap:        break-word;
-        -webkit-hyphens:  auto;
-        -moz-hyphens:  auto;
-        hyphens:  auto;
-
-    }
-
-    p {
-        font-size: 5rem;
-    }
+/* Palette URL: http://paletton.com/#uid=52g0u0kCvs2n+B5vrAmGrmMM6hk */
+/* As hex codes */
+/* Main Primary color */
+/* Main Secondary color (1) */
+/* Main Secondary color (2) */
+/* As RGBa codes */
+/* Main Primary color */
+/* Main Secondary color (1) */
+/* Main Secondary color (2) */
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+html {
+  font-size: 62.5%;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Arial";
+  padding-top: 5.4rem;
+}
+h1 {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 3rem;
+  color: #9BD400;
+  border-bottom: 1px solid black;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  line-height: 1.8;
+  text-indent: 3rem;
+  -webkit-box-shadow: 0 3 5 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 3 5 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3 5 rgba(0, 0, 0, 0.5);
+}
+#login {
+  position: fixed;
+  display: inline-block;
+  top: 0;
+  left: auto;
+  right: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: black;
+  line-height: 5.4rem;
+}
+#login label {
+  padding: .5rem;
+  font-size: 1.2rem;
+}
+#login input,
+#login button {
+  border: 2px solid #9BD400;
+  padding: .3rem;
+  font-size: 1.5rem;
+  color: #9BD400;
+  margin: 0 1rem 0 0;
+  background-color: white;
+}
+#login button {
+  padding: .3rem 1rem;
+}
+p {
+  font-size: 4rem;
+  color: black;
+  padding: 2rem 3rem;
+  letter-spacing: 1px;
+  margin: 2rem;
+}
