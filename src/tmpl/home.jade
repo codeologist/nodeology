@@ -1,18 +1,33 @@
 html
     head
-        title nodeology
-        link(rel="stylesheet" href="/css/main.css")
+        title=site.name
+        link(rel="stylesheet" href="/css/#{site.cssskin}")
     body
-        h1 nodeology
+        h1=site.name
 
+        if registerSuccessText
+            div.notify.success
+                span.fa.fa-check=registerSuccessText
+        p.about=site.about
 
-        p nodeology is a community website for NodeJs developers in New Zealand.
-            p Join Now
-            span some other stuff
+        form#login(method="post",action="/")
+            div
+                h2=lang.loginTitleText
+                input(type="text",name="luser",placeholder="email address")
+                input(type="password",name="lpass",placeholder="password")
+                button=lang.loginButtonText
 
-        form#login sign in now with your
-            label email address
-            input(type="text")
-            password
-            input(type="password",placeholder="password")
-            button sign in
+        form#register(method="post",action="/",model="registration")
+            div
+                h2=lang.registerTitleText
+                input(type="hidden",name="register")
+                label(class="errors username")=lang.wordUsername
+                input(type="email",name="username",placeholder="email address", value=post.username)
+                label(class="errors password")=lang.wordPassword
+                input(type="password",name="password",placeholder="password" )
+                label(class="errors confirm")=lang.wordConfirm
+                input(type="password",name="confirm",placeholder="confirm password")
+                button=lang.registerButtonText
+
+        script(type="text/javascript",src="js/jquery-2.2.0.min.js")
+        script(type="text/javascript",src="js/generic.js")

@@ -1,4 +1,4 @@
-
+  @import "font-awesome";
   @import "config";
   @import "elements";
 
@@ -9,62 +9,136 @@
   body {
     padding:0;
     margin:0;
-    font-family: "Arial";
-    padding-top: 5.4rem;
+    font-family: Nobile;
+    font-size: 1.6rem;
+    background-color:@color-secondary-2-1;
   }
 
   h1 {
-    position: fixed;
-    width: 100%;
-    top:0;
-    left:0;
+
     padding:0;
     margin:0;
     font-size: 3rem;
     color: @color-primary-0;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid @color-secondary-1-0;
     background-color: rgba( 255,255,255,.9);
     font-weight: 500;
-    line-height: 1.8;
+    line-height: 3;
     text-indent: 3rem;
+    background-color:white
 
-    .drop-shadow( 0, 3 ,5, .5);
   }
 
-  #login{
-    position: fixed;
-    display: inline-block;
-    top:0;
-    left: auto;
-    right:1rem;
-    font-weight:bold;
-    font-size: 1.2rem;
-    color: black;
-    line-height:  5.4rem;
+  .notify.success {
 
-    label {
-      padding: .5rem;
-      font-size:1.2rem;
+    padding:0;
+    margin:0;
+    color: black;
+    border-bottom: 1px solid @color-secondary-1-0;
+    background-color: white;
+
+    span{
+      color: @color-secondary-1-0;
+      font-size: 1.6rem;
+      font-weight: 500;
+      line-height: 3;
+      text-indent: 3rem;
     }
 
+
+
+  }
+  .valid{
+    color: @color-secondary-1-0;
+  }
+
+  .about {
+    padding: 2vw;
+    color:@color-secondary-2-4;
+    line-height: 1.8;
+    font-size: 2.5rem;
+    width: 50%;
+    float:left;
+    height: 100%;
+  }
+
+  form {
+
+    margin: 1vw;
+    overflow: hidden;
+    border: 1px solid @color-secondary-1-0;
+    padding:0;
+    background-color: white;
+
+    div {
+      position:relative;
+
+      width: 42vw;
+      float:right;
+      padding: 1vw;
+    }
+
+
+    h2 {
+      font-size: 1.6rem;
+      line-height: 2;
+      text-transform: capitalize;
+    }
+
+    label, button {
+      font-weight: bold;
+      text-transform: capitalize;
+    }
     input, button {
-      border: 2px solid @color-primary-0;
-      padding: .3rem;
-      font-size: 1.5rem;
-      color: @color-primary-0;
-      margin: 0 1rem 0 0;
-      background-color: white;
+      line-height: 1.5;
+      font-size: 1.4rem;
+      padding: 1vw;
+      box-sizing: border-box;
+      border: 1px solid @color-secondary-1-0;
+    }
+
+    label.error {
+      &+input{
+        color:@error;
+        border:1px solid @error;
+      }
+      color:@error;
     }
     button {
-      padding: .3rem 1rem;
+      padding-right: 30px;
     }
 
-  }
+    &.waiting button.active,
+    &.waiting input.active {
+      background-image: url(/ass/al1.gif);
+      background-position: 90% 50%;
+      background-repeat: no-repeat;
+    }
 
-  p {
-    font-size: 4rem;
-    color: black;
-    padding: 2rem 3rem;
-    letter-spacing: 1px;
-    margin: 2rem;
+    &#login{
+      input {
+        margin: 0 1vw 1vw 0;
+        width:46%;
+      }
+      button {
+        display:block;
+      }
+    }
+    &#register{
+
+      label {
+        display: block;
+        line-height: 1.8;
+        font-size: 1.4rem;
+      }
+
+      input, button {
+        display: block;
+        width: 100%;
+        margin: 0 0 1vw 0;
+      }
+      button{
+        width:auto;
+      }
+    }
   }
