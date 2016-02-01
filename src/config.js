@@ -5,8 +5,8 @@
             "site":{
                 "nodeology.co.nz" : {
                     "cssskin":"main.css",
-                    "name":"nodeolgy",
-                    "about":"nodeology is a community website for NodeJs developers in New Zealand."
+                    "name":"nodeology",
+                    "about":"Nodeology is a community website for Node JS developers, in New Zealand, to ask questions and share knowledge."
                 },
                 "localhost" : {
                     "cssskin":"main.css",
