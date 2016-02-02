@@ -1,6 +1,7 @@
 
 
     $(document).ready(function(){
+
         $("#register [name=username]").on("keyup", function() {
 
             var el = this;
@@ -16,5 +17,17 @@
 
 
             });
+        });
+
+        $("#register [name=confirm]").on("keyup", function() {
+            var password = $("#register [name=password]").val();
+
+            if ( password === $(this).val() ){
+                $( "#register label.confirm" ).removeClass("error").text("confirm password");
+                $( "#register button" ).prop("disabled","")
+            } else {
+                $( "#register label.confirm" ).addClass("error").text("passwords do not match");
+                $( "#register button" ).prop("disabled","disabled")
+            }
         });
     });

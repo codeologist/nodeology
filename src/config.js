@@ -24,7 +24,7 @@
                     wordRegister:"register",
                     wordUsername:"username",
                     wordPassword:"password",
-                    wordConfirm:"confirm"
+                    wordConfirm:"confirm password"
                 }
             },
             "api":{
