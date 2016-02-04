@@ -13,8 +13,7 @@
 }
 @font-face {
   font-family: 'Nobile';
-  src: url('../../fnt/fontawesome-webfont.eot?v=4.5.0');
-  src: url('../../fnt/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype'), url('../../fnt/fontawesome-webfont.woff2?v=4.5.0') format('woff2'), url('../../fnt/fontawesome-webfont.woff?v=4.5.0') format('woff'), url('../../fnt/Nobile-Regular.ttf?v=4.5.0') format('truetype'), url('../../fnt/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg');
+  src: url('../../fnt/Nobile-Regular.ttf?v=4.5.0') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -2112,7 +2111,7 @@ html {
 body {
   padding: 0;
   margin: 0;
-  font-family: "Arial";
+  font-family: Nobile, arial;
   font-size: 1.6rem;
   background-color: #FFF840;
 }
@@ -2128,19 +2127,33 @@ h1 {
   text-indent: 3rem;
   background-color: white;
 }
-.notify.success {
+.notify {
   padding: 0;
   margin: 0;
   color: black;
-  border-bottom: 1px solid #2EBD00;
+  position: relative;
   background-color: white;
 }
-.notify.success span {
-  color: #2EBD00;
+.notify span {
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 3;
   text-indent: 3rem;
+}
+.notify span:before {
+  margin-right: 1rem;
+}
+.notify.success {
+  border-bottom: 1px solid #2EBD00;
+}
+.notify.success span {
+  color: #2EBD00;
+}
+.notify.fail {
+  border-bottom: 1px solid #b94a48;
+}
+.notify.fail span {
+  color: #b94a48;
 }
 .valid {
   color: #2EBD00;

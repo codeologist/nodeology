@@ -24,7 +24,8 @@
                     wordRegister:"register",
                     wordUsername:"username",
                     wordPassword:"password",
-                    wordConfirm:"confirm password"
+                    wordConfirm:"confirm password",
+                    loginFailText:"failed to login"
                 }
             },
             "api":{

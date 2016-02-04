@@ -9,7 +9,7 @@
   body {
     padding:0;
     margin:0;
-    font-family: Nobile;
+    font-family: Nobile, arial;
     font-size: 1.6rem;
     background-color:@color-secondary-2-1;
   }
@@ -29,22 +29,39 @@
 
   }
 
-  .notify.success {
+  .notify {
 
     padding:0;
     margin:0;
     color: black;
-    border-bottom: 1px solid @color-secondary-1-0;
+    position: relative;
     background-color: white;
 
     span{
-      color: @color-secondary-1-0;
       font-size: 1.6rem;
       font-weight: 500;
       line-height: 3;
       text-indent: 3rem;
+
+      &:before{
+        margin-right: 1rem;
+      }
     }
 
+
+    &.success{
+      border-bottom: 1px solid @color-secondary-1-0;
+      span{
+        color: @color-secondary-1-0;
+      }
+    }
+
+    &.fail {
+      border-bottom: 1px solid @error;
+      span{
+        color: @error;
+      }
+    }
 
 
   }

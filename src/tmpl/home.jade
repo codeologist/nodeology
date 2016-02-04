@@ -5,16 +5,22 @@ html
     body
         h1=site.name
 
+        if loginFailText
+            div.notify.fail
+                span.fa.fa-times=loginFailText
+
         if registerSuccessText
             div.notify.success
                 span.fa.fa-check=registerSuccessText
+
         p.about=site.about
 
-        form#login(method="post",action="/")
+        form#login(method="post",action="/",model="application")
             div
                 h2=lang.loginTitleText
-                input(type="text",name="luser",placeholder="email address")
-                input(type="password",name="lpass",placeholder="password")
+                input(type="hidden",name="authenticate")
+                input(type="text",name="username",placeholder="email address")
+                input(type="password",name="password",placeholder="password")
                 button=lang.loginButtonText
 
         form#register(method="post",action="/",model="registration")
