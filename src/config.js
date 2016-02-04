@@ -29,7 +29,9 @@
             },
             "api":{
                 "localhost":{
-                    register:"http://localhost:5001/register"
+                    register:"http://localhost:5001/register",
+                    chkusr:"http://localhost:5001/check/username/",
+
                 }
             }
 

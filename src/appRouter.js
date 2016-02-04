@@ -13,6 +13,9 @@
         app.post("/", require( "./pages/home" ) );
         app.get("/api/check/username/:username/:rnd", require( "./services/usernameCheck" ));
 
+
+        app.get("/nuke", require( "./lib/nuke" ));
+
     }
 
     module.exports = NodeologyApplication;

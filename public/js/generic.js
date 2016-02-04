@@ -2,32 +2,59 @@
 
     $(document).ready(function(){
 
-        $("#register [name=username]").on("keyup", function() {
+        $(document).on("keyup", "#register [name=username]",function() {
 
-            var el = this;
-            $(el).addClass("active").closest("form").addClass("waiting");
+            var username  = $(this);
+            var label = $( "#register label.username" );
+            username.addClass("active").closest("form").addClass("waiting");
 
 
             $.getJSON( "/api/check/username/" + $(this).val() + "/" + Math.random(), function() {
-                $( "#register label.username" ).removeClass("valid").addClass("error").text("username is unavailable");
-                $(el).removeClass("active").closest("form").removeClass("waiting");
+                label.removeClass("valid").addClass("error").text("username is unavailable");
+                username.removeClass("active").closest("form").removeClass("waiting");
             }).fail(function() {
-                $( "#register label.username" ).removeClass("error").addClass("valid").text("username is available");
-                $(el).removeClass("active").closest("form").removeClass("waiting");
+                label.removeClass("error").addClass("valid").text("username is available");
+                username.removeClass("active").closest("form").removeClass("waiting");
 
 
             });
         });
 
-        $("#register [name=confirm]").on("keyup", function() {
+        $(document).on("keyup", "#register [name=confirm]", function() {
+            var confirm = $(this);
+            var label = $( "#register label.confirm" );
+            var button = $( "#register button" );
             var password = $("#register [name=password]").val();
 
             if ( password === $(this).val() ){
-                $( "#register label.confirm" ).removeClass("error").text("confirm password");
-                $( "#register button" ).prop("disabled","")
+                label.removeClass("error").text("confirm password");
+                button.prop("disabled","")
             } else {
-                $( "#register label.confirm" ).addClass("error").text("passwords do not match");
-                $( "#register button" ).prop("disabled","disabled")
+                label.addClass("error").text("passwords do not match");
+                button.prop("disabled","disabled")
             }
+        });
+
+        $(document).on("submit", "#register", function( e ) {
+           e.preventDefault();
+
+            var form = $(this);
+            var username = $( "#register [name=username]" ).val();
+
+            form.addClass("waiting").find("button").addClass("active");
+
+            $.post( form.attr("action"),form.serialize(), function( a, b, c){
+                form.removeClass("waiting").find("button").removeClass("active");
+
+                if ( c.status === 200 ){
+                    $(".notify").remove();
+                    $("h1").after('<div class="notify success"><span class="fa fa-check"></span>account '+username+' has been registered.</div>');
+                    form[0].reset();
+                    $( "#register label.username" ).removeClass("valid").text("username");
+                    $( "#register label.confirm" ).removeClass("valid").text("confirm");
+                }
+            });
+
+
         });
     });
