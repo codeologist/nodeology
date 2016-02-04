@@ -1,23 +1,34 @@
 
 
     $(document).ready(function(){
+        var t1 = null;
 
         $(document).on("keyup", "#register [name=username]",function() {
 
             var username  = $(this);
             var label = $( "#register label.username" );
-            username.addClass("active").closest("form").addClass("waiting");
+            var usernameText = username.val();
 
 
-            $.getJSON( "/api/check/username/" + $(this).val() + "/" + Math.random(), function() {
-                label.removeClass("valid").addClass("error").text("username is unavailable");
-                username.removeClass("active").closest("form").removeClass("waiting");
-            }).fail(function() {
-                label.removeClass("error").addClass("valid").text("username is available");
-                username.removeClass("active").closest("form").removeClass("waiting");
+            clearTimeout(t1);
+            t1 = setTimeout( function(){
 
 
-            });
+
+                if ( usernameText.length ){
+                    username.addClass("active").closest("form").addClass("waiting");
+                    $.getJSON( "/api/check/username/" + usernameText + "/" + Math.random(), function() {
+                        label.removeClass("valid").addClass("error").text("username is unavailable");
+                        username.removeClass("active").closest("form").removeClass("waiting");
+                    }).fail(function() {
+                        label.removeClass("error").addClass("valid").text("username is available");
+                        username.removeClass("active").closest("form").removeClass("waiting");
+                    });
+                }
+
+
+            }, 1000);
+
         });
 
         $(document).on("keyup", "#register [name=confirm]", function() {
