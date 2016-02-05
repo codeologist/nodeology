@@ -28,12 +28,18 @@
         configVars.errors = {
             username:"",
             password:"",
-            confirm:""
+            confirm:"",
+            authenticated:false
         };
         configVars.post = {
             username:""
         };
-        res.render( "home", configVars );
+
+        this.authorize(...arguments).then( function(){
+            res.render( "authHome", configVars );
+        }).catch( function(){
+            res.render( "home", configVars );
+        });
     };
 
     Controller.prototype.POST =  function( req, res ){
@@ -51,10 +57,7 @@
 
         if ( "authenticate" in req.body ){
             this.authenticate(...arguments).then( function( configVars ){
-                configVars.post = {
-                    authenticated:true
-                };
-                res.render( "home", configVars );
+                res.render( "authHome", configVars );
             }).catch(function( configVars ){
 
                 configVars.loginFailText = configVars.lang.loginFailText;
@@ -68,10 +71,22 @@
             var configVars = config( req.hostname, "en" );
 
             configVars.post = {
-                username:""
+                username:"",
+                authenticated:false
             };
 
-            reject(configVars);
+            var data =  { username: req.body.username, password: req.body.password };
+
+            fetch( configVars.api.authenticate, data ).then( function( result ){
+                if ( result.statusCode === 200 ) {
+                    resolve( configVars );
+                }
+                if ( result.statusCode === 400 ){
+                    reject( configVars );
+                }
+            }).catch( function(){
+                reject(configVars);
+            });
         });
     };
 
@@ -103,6 +118,28 @@
             }
         });
     };
+
+    Controller.prototype.authorize =  function( req, res ){
+        return new Promise( function( resolve, reject ){
+
+            var configVars = config( req.hostname, "en" );
+
+            var data =  { token: req.cookies.nodeology  };
+
+            fetch( configVars.api.authorize, data ).then( function( result ){
+console.log("-->",result)
+                if ( result.statusCode === 200 ) {
+                    resolve( configVars );
+                }
+                if ( result.statusCode === 403 ){
+                    reject( configVars );
+                }
+            }).catch( function(){
+                reject(configVars);
+            });
+        });
+    };
+
     module.exports = function( req, res ){
         (new Controller( req.hostname, "en" ))[req.method](...arguments);
     };

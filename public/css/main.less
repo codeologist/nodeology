@@ -12,10 +12,23 @@
     font-family: Nobile, arial;
     font-size: 1.6rem;
     background-color:@color-secondary-2-1;
+    padding-top: 91px;
+  }
+
+  body.authenticated{
+    background-color: #f1f1f1;
+  }
+
+  .banner{
+    padding: 10vw;
+    font-size: 5rem;
   }
 
   h1 {
-
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
     padding:0;
     margin:0;
     font-size: 3rem;
@@ -23,12 +36,17 @@
     border-bottom: 1px solid @color-secondary-1-0;
     background-color: rgba( 255,255,255,.9);
     font-weight: 500;
-    line-height: 3;
+    line-height: 90px;
     text-indent: 3rem;
     background-color:white
 
   }
 
+  main {
+    width: 98%;
+    margin: 0 auto;
+
+  }
   .notify {
 
     padding:0;
@@ -159,3 +177,15 @@
       }
     }
   }
+
+
+  #logout{
+
+    position: fixed;
+    right: 1rem;
+    top: 2.5rem;
+    font-size: 3rem;
+    color:@color-primary-4;
+
+  }
+

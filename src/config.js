@@ -25,12 +25,15 @@
                     wordUsername:"username",
                     wordPassword:"password",
                     wordConfirm:"confirm password",
-                    loginFailText:"failed to login"
+                    loginFailText:"failed to login",
+                    loggedOutText:"you are now logged out"
                 }
             },
             "api":{
                 "localhost":{
                     register:"http://localhost:5001/register",
+                    authenticate:"http://localhost:5001/authenticate",
+                    authorize:"http://localhost:5001/authorize",
                     chkusr:"http://localhost:5001/check/username/",
 
                 }

@@ -18,7 +18,7 @@ const DB = {
 
 module.exports =  function( req,res){
     new IoRedis( DB).flushall();
-
+    res.clearCookie("cookie");
     res.write("nuked");
     res.end();
 };

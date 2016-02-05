@@ -1,0 +1,11 @@
+html
+    head
+        title=site.name
+        link(rel="stylesheet" href="/css/#{site.cssskin}")
+    body.authenticated
+        h1=site.name
+
+        a#logout.fa.fa-power-off(href="/logout") logout
+
+        script(type="text/javascript",src="js/jquery-2.2.0.min.js")
+        script(type="text/javascript",src="js/generic.js")

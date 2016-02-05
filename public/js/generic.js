@@ -3,6 +3,7 @@
     $(document).ready(function(){
         var t1 = null;
 
+
         $(document).on("keyup", "#register [name=username]",function() {
 
             var username  = $(this);

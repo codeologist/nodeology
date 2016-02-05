@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://github.com/" />
+<title>nodeology-register</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">nodeology-register</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>http://localhost:5000/nuke</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>nuked</td>
+</tr>
+<tr>
+	<td>deleteAllVisibleCookies</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://localhost:5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=#register [name=username]</td>
+	<td>a@b.co</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=#register [name=username]</td>
+	<td>m</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=#register.waiting,#register [name=username].active</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#register label</td>
+	<td>username is available</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=#register label.username.valid</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=#register.waiting,#register [name=username].active</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=#register [name=password]</td>
+	<td>pass1</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=#register [name=confirm]</td>
+	<td>pass</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=#register label.confirm.error</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#register label.confirm</td>
+	<td>passwords do not match</td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>css=#register button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=#register [name=confirm]</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=#register label.confirm.error</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#register label.confirm</td>
+	<td>confirm password</td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>css=#register button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#register button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=.notify</td>
+	<td>account a@b.com has been registered.</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#register [name=username]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=#register [name=username]</td>
+	<td>a@b.co</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=#register [name=username]</td>
+	<td>m</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#register label</td>
+	<td>username is unavailable</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=#register label.username.error</td>
+	<td></td>
+</tr>
+<!--Set back to original state-->
+</tbody></table>
+</body>
+</html>
