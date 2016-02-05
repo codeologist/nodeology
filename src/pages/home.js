@@ -79,6 +79,7 @@
 
             fetch( configVars.api.authenticate, data ).then( function( result ){
                 if ( result.statusCode === 200 ) {
+                    res.cookie('nodeology', result.data.token, { domain: '', path: '/' });
                     resolve( configVars );
                 }
                 if ( result.statusCode === 400 ){
@@ -127,7 +128,7 @@
             var data =  { token: req.cookies.nodeology  };
 
             fetch( configVars.api.authorize, data ).then( function( result ){
-console.log("-->",result)
+
                 if ( result.statusCode === 200 ) {
                     resolve( configVars );
                 }

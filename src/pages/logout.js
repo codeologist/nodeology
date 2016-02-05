@@ -9,5 +9,6 @@
 
         var configVars = config( req.hostname, "en" );
 
+        res.clearCookie("nodeology");
         res.render("logout", configVars );
     };
