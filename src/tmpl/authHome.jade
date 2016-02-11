@@ -5,7 +5,19 @@ html
     body.authenticated
         h1=site.name
 
-        a#logout.fa.fa-power-off(href="/logout") logout
+        form#update(method="post",action="/")
+            textarea(name="content")
+            input(type="hidden",name="userinput")
+            button post
+
+
+        div#timeline
+            each post in feed
+                article.post
+                    p.text=post.text
+
+        a#logout.fa.fa-power-off(href="/logout",title="Logout of application")
+            span logout
 
         script(type="text/javascript",src="js/jquery-2.2.0.min.js")
         script(type="text/javascript",src="js/generic.js")

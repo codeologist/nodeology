@@ -2119,6 +2119,12 @@ body {
 body.authenticated {
   background-color: #f1f1f1;
 }
+a {
+  color: #608300;
+}
+a:hover {
+  color: #DFD700;
+}
 .banner {
   padding: 10vw;
   font-size: 5rem;
@@ -2253,8 +2259,14 @@ form#register button {
 }
 #logout {
   position: fixed;
-  right: 1rem;
-  top: 2.5rem;
-  font-size: 3rem;
-  color: #608300;
+  right: 2rem;
+  top: 3.5rem;
+  font-size: 2rem;
+  text-decoration: none;
+}
+#logout:before {
+  padding-right: 1vw;
+}
+#logout span {
+  font-family: arial;
 }

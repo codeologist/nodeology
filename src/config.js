@@ -26,7 +26,8 @@
                     wordPassword:"password",
                     wordConfirm:"confirm password",
                     loginFailText:"failed to login",
-                    loggedOutText:"you are now logged out"
+                    loggedOutText:"you are now logged out",
+                    generalError:"oops, something went wrong.  Refresh the page."
                 }
             },
             "api":{
@@ -35,6 +36,8 @@
                     authenticate:"http://localhost:5001/authenticate",
                     authorize:"http://localhost:5001/authorize",
                     chkusr:"http://localhost:5001/check/username/",
+                    addContent:"http://localhost:5001/add/content",
+                    timeline:"http://localhost:5001/timeline"
 
                 }
             }

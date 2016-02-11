@@ -19,6 +19,12 @@
     background-color: #f1f1f1;
   }
 
+  a{
+    color:@color-primary-4;
+  }
+  a:hover{
+    color:@color-secondary-2-0;
+  }
   .banner{
     padding: 10vw;
     font-size: 5rem;
@@ -182,10 +188,18 @@
   #logout{
 
     position: fixed;
-    right: 1rem;
-    top: 2.5rem;
-    font-size: 3rem;
-    color:@color-primary-4;
+    right: 2rem;
+    top: 3.5rem;
+    font-size: 2rem;
 
+    text-decoration: none;
+    &:before{
+      padding-right:1vw;
+    }
+
+
+    span {
+      font-family: arial;
+    }
   }
 

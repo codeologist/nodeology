@@ -45,15 +45,23 @@ module.exports = {
         new IoRedis( DB ).set( req.query.t, "", function ( err ) {
 
             if (err) {
-                res.write("error");
+                res.end("error");
             } else {
 
-                res.cookie('nodeology', req.query.t, { domain: '', path: '/' });
 
-                res.write("success");
+
+                new IoRedis( DB ).set( req.query.t, req.query.u, function ( err ) {
+
+                    if ( err ){
+                        res.end("error");
+                    } else {
+
+                        res.cookie('nodeology', req.query.t, { domain: '', path: '/' });
+                        res.write("success");
+                        res.end();
+                    }
+                });
             }
-
-            res.end();
         });
     }
 };
