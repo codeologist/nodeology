@@ -1,0 +1,35 @@
+.notify {
+
+  padding:0;
+  margin:0;
+  color: black;
+  position: relative;
+  background-color: white;
+
+  span{
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 3;
+    text-indent: 3rem;
+
+    &:before{
+      margin-right: 1rem;
+    }
+  }
+
+  &.success{
+    border-bottom: 1px solid @border;
+    span{
+      color: @color-secondary-1-0;
+    }
+  }
+
+  &.fail {
+    border-bottom: 1px solid @error;
+    span{
+      color: @error;
+    }
+  }
+
+
+}

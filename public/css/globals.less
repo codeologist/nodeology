@@ -1,0 +1,69 @@
+  @import "font-awesome";
+  @import "config";
+  @import "elements";
+  @import "components/logoutButton";
+  @import "components/notifyBar";
+  @import "components/buttons";
+  @import "components/person";
+
+  html{
+    font-size: 62.5%;
+  }
+
+  body {
+    padding:0;
+    margin:0;
+    font-family: Nobile, arial;
+    font-size: 1.6rem;
+    background-color:@color-secondary-2-1;
+    padding-top: 91px;
+  }
+
+  body.authenticated{
+    background-color: #f1f1f1;
+  }
+
+  a{
+    color:@color-primary-4;
+  }
+  a:hover{
+    color:@color-secondary-2-0;
+  }
+  .banner{
+    padding: 10vw;
+    font-size: 5rem;
+  }
+
+  h1 {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    padding:0;
+    margin:0;
+    font-size: 3rem;
+    color: @color-primary-0;
+    border-bottom: 1px solid @color-secondary-1-0;
+    background-color: rgba( 255,255,255,.9);
+    font-weight: 500;
+    line-height: 90px;
+    text-indent: 3rem;
+    background-color:white
+
+  }
+  h2{
+    padding:0;
+    margin:0;
+  }
+  main {
+    width: 98%;
+    margin: 0 auto;
+
+  }
+
+
+
+  .valid{
+    color: @color-secondary-1-0;
+  }
+

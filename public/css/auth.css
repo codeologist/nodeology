@@ -2105,6 +2105,71 @@
     A set of useful LESS mixins
     More info at: http://lesselements.com
   ---------------------------------------------------*/
+#logout {
+  position: fixed;
+  right: 2rem;
+  top: 3.5rem;
+  font-size: 2rem;
+  text-decoration: none;
+}
+#logout:before {
+  padding-right: 1vw;
+}
+#logout span {
+  font-family: arial;
+}
+.notify {
+  padding: 0;
+  margin: 0;
+  color: black;
+  position: relative;
+  background-color: white;
+}
+.notify span {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 3;
+  text-indent: 3rem;
+}
+.notify span:before {
+  margin-right: 1rem;
+}
+.notify.success {
+  border-bottom: 1px solid #d1d1d1;
+}
+.notify.success span {
+  color: #2EBD00;
+}
+.notify.fail {
+  border-bottom: 1px solid #b94a48;
+}
+.notify.fail span {
+  color: #b94a48;
+}
+button {
+  box-sizing: border-box;
+  border: 1px solid #d1d1d1;
+  background-color: #cccccc;
+}
+button:hover {
+  background-color: #f1f1f1;
+}
+.person {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.person h2 {
+  font-size: 1.6rem;
+  order: 1;
+  padding-left: 1rem;
+}
+.person img {
+  width: 40px;
+  height: auto;
+  border: 1px solid #d1d1d1;
+  order: 0;
+}
 html {
   font-size: 62.5%;
 }
@@ -2145,128 +2210,51 @@ h1 {
   text-indent: 3rem;
   background-color: white;
 }
+h2 {
+  padding: 0;
+  margin: 0;
+}
 main {
   width: 98%;
   margin: 0 auto;
 }
-.notify {
-  padding: 0;
-  margin: 0;
-  color: black;
-  position: relative;
-  background-color: white;
-}
-.notify span {
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 3;
-  text-indent: 3rem;
-}
-.notify span:before {
-  margin-right: 1rem;
-}
-.notify.success {
-  border-bottom: 1px solid #2EBD00;
-}
-.notify.success span {
-  color: #2EBD00;
-}
-.notify.fail {
-  border-bottom: 1px solid #b94a48;
-}
-.notify.fail span {
-  color: #b94a48;
-}
 .valid {
   color: #2EBD00;
 }
-.about {
-  padding: 2vw;
-  color: #8A8500;
-  line-height: 1.8;
-  font-size: 2.5rem;
-  width: 50%;
-  float: left;
-  height: 100%;
-}
+article,
 form {
-  margin: 1vw;
-  overflow: hidden;
-  border: 1px solid #2EBD00;
-  padding: 0;
+  width: 50vw;
+  margin: 2rem;
+  border-radius: 3px;
+  border: 1px solid #d1d1d1;
   background-color: white;
 }
-form div {
-  position: relative;
-  width: 42vw;
-  float: right;
-  padding: 1vw;
+.person {
+  margin: 2rem;
 }
-form h2 {
-  font-size: 1.6rem;
-  line-height: 2;
-  text-transform: capitalize;
+section {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
 }
-form label,
-form button {
-  font-weight: bold;
-  text-transform: capitalize;
+menu {
+  width: 20vw;
+  background-color: black;
+  float: left;
 }
-form input,
-form button {
-  line-height: 1.5;
-  font-size: 1.4rem;
-  padding: 1vw;
-  box-sizing: border-box;
-  border: 1px solid #2EBD00;
-}
-form label.error {
-  color: #b94a48;
-}
-form label.error + input {
-  color: #b94a48;
-  border: 1px solid #b94a48;
-}
-form button {
-  padding-right: 30px;
-}
-form.waiting button.active,
-form.waiting input.active {
-  background-image: url(/ass/al1.gif);
-  background-position: 90% 50%;
-  background-repeat: no-repeat;
-}
-form#login input {
-  margin: 0 1vw 1vw 0;
-  width: 46%;
-}
-form#login button {
-  display: block;
-}
-form#register label {
-  display: block;
-  line-height: 1.8;
-  font-size: 1.4rem;
-}
-form#register input,
-form#register button {
+textarea {
   display: block;
   width: 100%;
-  margin: 0 0 1vw 0;
+  padding: 1rem;
+  box-sizing: border-box;
+  height: 10rem;
+  line-height: 1.5;
+  border: 0 none;
+  border-bottom: 1px solid #d1d1d1;
+  resize: none;
 }
-form#register button {
-  width: auto;
-}
-#logout {
-  position: fixed;
-  right: 2rem;
-  top: 3.5rem;
-  font-size: 2rem;
-  text-decoration: none;
-}
-#logout:before {
-  padding-right: 1vw;
-}
-#logout span {
-  font-family: arial;
+button {
+  font-size: 1.4rem;
+  padding: .5rem 1rem;
+  margin: 1rem;
 }

@@ -14,7 +14,7 @@
     Controller.prototype.GET =  function( req, res ){
 
         var configVars = config( req.hostname, "en" );
-
+console.log(">>>>>",JSON.stringify(configVars))
         configVars.errors = {
             username:"",
             password:"",
@@ -27,8 +27,8 @@
         configVars.feed = [];
         var self=this;
         var args = arguments;
-        self.authorize(...args).then( function(){
-
+        self.authorize(...args).then( function( user){
+            configVars.user={name:"bigboy"}
             self.timeline( ...args ).then( function( feed ){
                 configVars.feed = feed;
                 res.render( "authHome", configVars );//<< this needs to be a page object

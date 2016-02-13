@@ -4,12 +4,13 @@
         var config = {
             "site":{
                 "nodeology.co.nz" : {
-                    "cssskin":"main.css",
+                    "cssskin1":"unauth.css",
                     "name":"nodeology",
                     "about":"Nodeology is a community website for Node JS developers, in New Zealand, to ask questions and share knowledge."
                 },
                 "localhost" : {
-                    "cssskin":"main.css",
+                    "cssskin1":"unauth.css",
+                    "cssskin2":"auth.css",
                     "name":"localhost",
                     "about":"Look, just because I don't be givin' no man a foot massage don't make it right for Marsellus to throw Antwone into a glass motherfuckin' house, fuckin' up the way the nigger talks. Motherfucker do that shit to me, he better paralyze my ass, 'cause I'll kill the motherfucker, know what I'm sayin'?"
                 }
@@ -27,7 +28,9 @@
                     wordConfirm:"confirm password",
                     loginFailText:"failed to login",
                     loggedOutText:"you are now logged out",
-                    generalError:"oops, something went wrong.  Refresh the page."
+                    generalError:"oops, something went wrong.  Refresh the page.",
+                    callToAction1:"say something interesting",
+                    greeting1:"hello"
                 }
             },
             "api":{

@@ -1,0 +1,94 @@
+
+  @import "globals";
+
+  .about {
+    padding: 2vw;
+    color:@color-secondary-2-4;
+    line-height: 1.8;
+    font-size: 2.5rem;
+    width: 50%;
+    float:left;
+    height: 100%;
+  }
+
+  form {
+
+    margin: 1vw;
+    overflow: hidden;
+    border: 1px solid @border;
+    border-radius: 3px;
+    padding:0;
+    background-color: white;
+
+    div {
+      position:relative;
+
+      width: 42vw;
+      float:right;
+      padding: 1vw;
+    }
+
+
+    h2 {
+      font-size: 1.6rem;
+      line-height: 2;
+      text-transform: capitalize;
+    }
+
+    label, button {
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+    input, button {
+      line-height: 1.5;
+      font-size: 1.4rem;
+      padding: 1vw;
+      box-sizing: border-box;
+      border: 1px solid @border;
+    }
+
+    label.error {
+      &+input{
+        color:@error;
+        border:1px solid @error;
+      }
+      color:@error;
+    }
+    button {
+      padding-right: 30px;
+    }
+
+    &.waiting button.active,
+    &.waiting input.active {
+      background-image: url(/ass/al1.gif);
+      background-position: 90% 50%;
+      background-repeat: no-repeat;
+    }
+
+    &#login{
+      input {
+        margin: 0 1vw 1vw 0;
+        width:46%;
+      }
+      button {
+        display:block;
+      }
+    }
+    &#register{
+
+      label {
+        display: block;
+        line-height: 1.8;
+        font-size: 1.4rem;
+      }
+
+      input, button {
+        display: block;
+        width: 100%;
+        margin: 0 0 1vw 0;
+      }
+      button{
+        width:auto;
+      }
+    }
+  }
