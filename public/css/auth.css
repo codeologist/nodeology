@@ -2159,10 +2159,12 @@ button:hover {
   flex-direction: row;
   align-items: center;
 }
-.person h2 {
-  font-size: 1.6rem;
+.person > div {
   order: 1;
   padding-left: 1rem;
+}
+.person h2 {
+  font-size: 1.6rem;
 }
 .person img {
   width: 40px;
@@ -2232,10 +2234,16 @@ form {
 .person {
   margin: 2rem;
 }
+.person .time {
+  color: #ccc;
+}
 section {
   display: flex;
   flex-direction: row;
   align-items: stretch;
+}
+section #timeline .person {
+  margin: .5rem;
 }
 menu {
   width: 20vw;

@@ -4,6 +4,7 @@
     const config = require("../config");
     const fetch = require("../lib/fetch");
     const util = require("util");
+    const moment = require("moment");
 
 
     function Controller( host, lang ){
@@ -14,7 +15,7 @@
     Controller.prototype.GET =  function( req, res ){
 
         var configVars = config( req.hostname, "en" );
-console.log(">>>>>",JSON.stringify(configVars))
+
         configVars.errors = {
             username:"",
             password:"",
@@ -28,8 +29,14 @@ console.log(">>>>>",JSON.stringify(configVars))
         var self=this;
         var args = arguments;
         self.authorize(...args).then( function( user){
-            configVars.user={name:"bigboy"}
+            configVars.user={name:"bigboy"};
             self.timeline( ...args ).then( function( feed ){
+
+                feed.forEach( function( post ){
+                    post.nicetime = moment( +post.timestamp ).format('LT');
+
+
+                });
                 configVars.feed = feed;
                 res.render( "authHome", configVars );//<< this needs to be a page object
             }).catch( function( feed ){

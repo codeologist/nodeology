@@ -19,6 +19,7 @@
         app.get("/nuke", require( "./lib/nuke" ));
         app.get("/fixture/reguser", require( "./lib/fixture" ).reguser);
         app.get("/fixture/authuser", require( "./lib/fixture" ).authUser);
+        app.get("/fixture/postupdate", require( "./lib/fixture" ).postUpdate);
 
     }
 

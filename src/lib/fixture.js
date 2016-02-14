@@ -63,5 +63,34 @@ module.exports = {
                 });
             }
         });
+    },
+    postUpdate:function( req, res ){
+        new IoRedis( DB ).set( req.query.t, "", function ( err ) {
+
+            if (err) {
+                res.end("error");
+            } else {
+
+                var host = req.query.h || "localhost";
+                var username  = req.query.u || "mrnobody";
+                var timestamp =  req.query.ts || new Date().getTime();
+                var text = req.query.t;
+                var uri = req.query.uri || "http://test.com/1234";
+                var body2 ={};
+                body2.host = host;
+                body2.timestamp= timestamp;
+                body2.text = text;
+                body2.username = username;
+
+                var m = new IoRedis( DB ).multi();
+                m.lpush( "TIMELINE:" + host + ":" + username, uri  );
+                m.hmset( uri, body2 );
+                m.exec( function ( err,result ) {
+                        res.write("posted");
+                    res.end();
+                });
+
+            }
+        });
     }
 };
