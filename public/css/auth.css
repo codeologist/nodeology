@@ -2242,8 +2242,11 @@ section {
   flex-direction: row;
   align-items: stretch;
 }
-section #timeline .person {
+section article .person {
   margin: .5rem;
+}
+section article .text {
+  padding: .5rem;
 }
 menu {
   width: 20vw;

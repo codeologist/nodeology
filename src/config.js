@@ -5,6 +5,7 @@
             "site":{
                 "nodeology.co.nz" : {
                     "cssskin1":"unauth.css",
+                    "cssskin2":"auth.css",
                     "name":"nodeology",
                     "about":"Nodeology is a community website for Node JS developers, in New Zealand, to ask questions and share knowledge."
                 },
@@ -34,6 +35,14 @@
                 }
             },
             "api":{
+                "nodeology.co.nz" : {
+                    register:"http://api.nodeology.co.nz/register",
+                    authenticate:"http://api.nodeology.co.nz/authenticate",
+                    authorize:"http://api.nodeology.co.nz/authorize",
+                    chkusr:"http://api.nodeology.co.nz/check/username/",
+                    addContent:"http://api.nodeology.co.nz/add/content",
+                    timeline:"http://api.nodeology.co.nz/timeline"  
+                },
                 "localhost":{
                     register:"http://localhost:5001/register",
                     authenticate:"http://localhost:5001/authenticate",
