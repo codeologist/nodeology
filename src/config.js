@@ -47,18 +47,26 @@
                     register:"http://localhost:5001/register",
                     authenticate:"http://localhost:5001/authenticate",
                     authorize:"http://localhost:5001/authorize",
-                    chkusr:"http://localhost:5001/check/username/",
+                    chkusr:"http://localhost:5001/check/username",
                     addContent:"http://localhost:5001/add/content",
                     timeline:"http://localhost:5001/timeline"
 
                 }
-            }
-
+            },
+            post: {
+                username: "",
+                authenticated: false
+            },
+            feed:[]
         };
+
 
         return {
             "site": config.site[sitename],
             "lang":config.lang[lang||"en"],
-            "api":config.api[sitename]
+            "api":config.api[sitename],
+            "post":config.post,
+            "feed": config.feed,
+            "user":{name:"bigboy"}
         };
     };
