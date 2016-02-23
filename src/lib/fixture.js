@@ -13,24 +13,39 @@ const DB = {
     db:         0
 };
 
+    function upduser(){
+
+    }
 
 
 
 module.exports = {
+    upduser:function( req, res){
+
+        new IoRedis(DB).hset("USER:" +  req.query.username, req.query.field, req.query.val, function (err) {
+            if (err) {
+                res.write("error");
+            } else {
+                res.write("success");
+            }
+
+            res.end();
+        });
+    },
     reguser: function (req, res) {
 
-        var u = req.query.u;
-        var p = req.query.p;
+        var u = req.query.username;
+        var p = req.query.password;
 
         var salt = crypto.randomBytes(256).toString();
 
-        var userdata = {
-            sitename: "localhost",
-            username: u,
+        var auth = {
+            appname: "localhost",
             password: crypto.createHash('sha1').update(p + salt).digest('hex'),
             salt: salt
         };
 
+        var userdata = Object.assign( req.query, auth );
         new IoRedis(DB).hmset("USER:" + u, userdata, function (err) {
             if (err) {
                 res.write("error");

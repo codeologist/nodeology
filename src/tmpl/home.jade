@@ -3,15 +3,7 @@ html
         title=site.name
         link(rel="stylesheet" href="/css/#{site.cssskin1}")
     body
-        h1=site.name
-
-        if loginFailText
-            div.notify.fail
-                span.fa.fa-times=loginFailText
-
-        if registerSuccessText
-            div.notify.success
-                span.fa.fa-check=registerSuccessText
+        include header.jade
 
         p.about=site.about
 

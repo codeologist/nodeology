@@ -1,0 +1,32 @@
+html
+    head
+        title=site.name
+        link(rel="stylesheet" href="/css/#{site.cssskin2}")
+    body.authenticated
+        include header.jade
+
+        section
+            menu
+            div#userpanel
+                div.person.micro
+                    div
+                        h2 #{lang.greeting1} #{user.name}
+                    img(src="ass/ghost.jpg")
+
+                form(method="post",action="/profile")
+                    h2.username #{lang.username}: #{user.username}
+                    fieldset
+                        label name
+                        input(type="text",name="name",value=user.name)
+                    fieldset
+                        label location
+                        input(type="text",name="location",value=user.location)
+                    fieldset
+                        label about
+                        input(type="text",name="about",value=user.about)
+                    fieldset
+                        label=lang.userProfilePasswordRequired
+                        input(type="password",name="password")
+                    button=lang.update
+        a#logout.fa.fa-power-off(href="/logout",title="Logout of application")
+            span logout

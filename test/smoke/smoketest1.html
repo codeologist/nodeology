@@ -4,38 +4,64 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="https://github.com/" />
-<title>nodeology-login</title>
+<title>smoketest1</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">nodeology-login</td></tr>
+<tr><td rowspan="1" colspan="3">smoketest1</td></tr>
 </thead><tbody>
 <tr>
-	<td>open</td>
-	<td>http://localhost:5000/nuke</td>
+	<td>deleteAllVisibleCookies</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForTextPresent</td>
 	<td></td>
-	<td>nuked</td>
 </tr>
 <tr>
 	<td>open</td>
-	<td>http://localhost:5000/fixture/reguser?username=user@b.com&amp;password=xxx</td>
+	<td>http://nodeology.co.nz</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForTextPresent</td>
+	<td>waitForElementPresent</td>
+	<td>css=#register [name=username]</td>
 	<td></td>
-	<td>success</td>
 </tr>
 <tr>
-	<td>open</td>
-	<td>http://localhost:5000</td>
+	<td>type</td>
+	<td>css=#register [name=username]</td>
+	<td>a@b.co</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=#register [name=username]</td>
+	<td>m</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#register label</td>
+	<td>username is available</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=#register [name=password]</td>
+	<td>pass</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=#register [name=confirm]</td>
+	<td>pass</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#register button</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=.notify</td>
+	<td>account a@b.com has been registered.</td>
+</tr>
+<!--LOGIN-->
 <tr>
 	<td>type</td>
 	<td>css=#login [name=username]</td>
@@ -53,54 +79,10 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=.notify.fail</td>
-	<td>failed to login</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>css=#login [name=username]</td>
-	<td>user@b.com</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>css=#login [name=password]</td>
-	<td>xxx</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#login button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
 	<td>css=#logout</td>
 	<td>logout</td>
 </tr>
-<tr>
-	<td>open</td>
-	<td>http://localhost:5000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#logout</td>
-	<td>logout</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=.banner</td>
-	<td>you are now logged out</td>
-</tr>
-<tr>
-	<td>assertNotCookie</td>
-	<td>*nodeology*</td>
-	<td></td>
-</tr>
+
 </tbody></table>
 </body>
 </html>

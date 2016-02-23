@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://github.com/" />
+<title>settings</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">settings</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>http://localhost:5000/nuke</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>nuked</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://localhost:5000/fixture/authuser?t=qwerty&amp;u=bob@nowhere.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>success</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://localhost:5000/fixture/reguser?password=password&amp;username=bob@nowhere.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>success</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://localhost:5000/fixture/upuser?username=bob&amp;field=name&amp;val=bob%20newheart</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>success</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://localhost:5000/fixture/upuser?username=bob&amp;field=location&amp;val=maldives</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>success</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://localhost:5000/fixture/upuser?username=bob&amp;field=about&amp;val=entertainer%20extrodinaire</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>success</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://localhost:5000/profile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=.username</td>
+	<td>username: bob@nowhere.com</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>css=[name=name]</td>
+	<td>bob newheart</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>css=[name=location]</td>
+	<td>maldives</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>css=[name=about]</td>
+	<td>entertainer extrodinaire</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=form fieldset:eq(3) label</td>
+	<td>please type your password to change your user settings.</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>css=[type=password]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=form button</td>
+	<td>update</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=[name=name]</td>
+	<td>richard simmons</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=[type=password]</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=form button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=.notify</td>
+	<td>profile has been updated.</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>css=[name=name]</td>
+	<td>richard simmons</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

@@ -31,7 +31,10 @@
                     loggedOutText:"you are now logged out",
                     generalError:"oops, something went wrong.  Refresh the page.",
                     callToAction1:"say something interesting",
-                    greeting1:"hello"
+                    greeting1:"hello",
+                    userProfilePasswordRequired:"please type your password to change your user settings.",
+                    update:"update",
+                    username:"username"
                 }
             },
             "api":{
@@ -67,6 +70,9 @@
             "api":config.api[sitename],
             "post":config.post,
             "feed": config.feed,
-            "user":{name:"bigboy"}
+            "user":{
+                name:"bigboy",
+                email:"big@boy.com"
+            }
         };
     };
