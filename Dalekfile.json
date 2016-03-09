@@ -1,0 +1,5 @@
+{
+  "reporter": ["console", "html"],
+
+  "browser": ["phantomjs", "chrome","IE","firefox","ios"]
+}

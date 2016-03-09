@@ -44,7 +44,8 @@
                     authorize:"http://api.nodeology.co.nz/authorize",
                     chkusr:"http://api.nodeology.co.nz/check/username/",
                     addContent:"http://api.nodeology.co.nz/add/content",
-                    timeline:"http://api.nodeology.co.nz/timeline"  
+                    timeline:"http://api.nodeology.co.nz/timeline",
+                    profile:"http://api.nodeology.co.nz/profile"
                 },
                 "localhost":{
                     register:"http://localhost:5001/register",
@@ -52,7 +53,8 @@
                     authorize:"http://localhost:5001/authorize",
                     chkusr:"http://localhost:5001/check/username",
                     addContent:"http://localhost:5001/add/content",
-                    timeline:"http://localhost:5001/timeline"
+                    timeline:"http://localhost:5001/timeline",
+                    profile:"http://localhost:5001/profile"
 
                 }
             },

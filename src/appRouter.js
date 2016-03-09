@@ -11,8 +11,9 @@
 
         app.use(express.static('public'));
         app.get("/", require( "./pages/home" ) );
-        app.post("/", require( "./pages/home" ) );
         app.get("/profile", require( "./pages/displayProfile" ) );
+
+        app.post("/", require( "./pages/home" ) );
         app.post("/profile", require( "./pages/updateProfile" ) );
 
 

@@ -43,7 +43,7 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>http://localhost:5000/fixture/upuser?username=bob&amp;field=name&amp;val=bob%20newheart</td>
+	<td>http://localhost:5000/fixture/upuser?username=bob@nowhere.com&amp;field=name&amp;val=bob%20newheart</td>
 	<td></td>
 </tr>
 <tr>
@@ -53,7 +53,7 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>http://localhost:5000/fixture/upuser?username=bob&amp;field=location&amp;val=maldives</td>
+	<td>http://localhost:5000/fixture/upuser?username=bob@nowhere.com&amp;field=location&amp;val=maldives</td>
 	<td></td>
 </tr>
 <tr>
@@ -63,7 +63,7 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>http://localhost:5000/fixture/upuser?username=bob&amp;field=about&amp;val=entertainer%20extrodinaire</td>
+	<td>http://localhost:5000/fixture/upuser?username=bob@nowhere.com&amp;field=about&amp;val=entertainer%20extrodinaire</td>
 	<td></td>
 </tr>
 <tr>
@@ -137,11 +137,15 @@
 	<td>profile has been updated.</td>
 </tr>
 <tr>
-	<td>assertValue</td>
+	<td>open</td>
+	<td>http://localhost:5000/profile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
 	<td>css=[name=name]</td>
 	<td>richard simmons</td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

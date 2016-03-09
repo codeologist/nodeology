@@ -7,10 +7,20 @@
 
     const config = require("../config");
 
-    module.exports= function( req,res){
+    module.exports= function( req, res){
 
         var configVars = config( req.hostname, "en" );
 
-        configVars.user = userProfile.get();
-        res.render("profile", configVars );
+        userProfile.get( req.hostname,  req.cookies.nodeology ).then( function( profile ){
+
+            configVars.user=profile;
+            configVars.notifySuccess=false;
+            configVars.notifyFail=false;
+
+            res.render("profile", configVars );
+
+        }).catch( function(err){
+
+            res.send( err )
+        })
     };
