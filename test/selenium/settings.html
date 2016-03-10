@@ -84,7 +84,7 @@
 <tr>
 	<td>assertText</td>
 	<td>css=.username</td>
-	<td>username: bob@nowhere.com</td>
+	<td>username*bob@nowhere.com</td>
 </tr>
 <tr>
 	<td>assertValue</td>
@@ -104,6 +104,11 @@
 <tr>
 	<td>assertText</td>
 	<td>css=form fieldset:eq(3) label</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=form fieldset:eq(3) p</td>
 	<td>please type your password to change your user settings.</td>
 </tr>
 <tr>
@@ -145,6 +150,41 @@
 	<td>waitForValue</td>
 	<td>css=[name=name]</td>
 	<td>richard simmons</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=[name=location]</td>
+	<td>nz</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=[type=password]</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=form button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=.notify</td>
+	<td>profile has been updated.</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>css=[name=location]</td>
+	<td>nz</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://localhost:5000/profile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>css=[name=location]</td>
+	<td>nz</td>
 </tr>
 </tbody></table>
 </body>

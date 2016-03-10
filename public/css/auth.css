@@ -2248,9 +2248,49 @@ section article .person {
 section article .text {
   padding: .5rem;
 }
+label {
+  font-size: 2rem;
+}
+input {
+  font-size: 1.5rem;
+  padding: .5rem;
+}
+fieldset {
+  border: 0 none;
+  margin: 0;
+  padding: 1rem 0;
+}
+form h2 {
+  color: #444;
+  font-size: 1.5rem;
+  line-height: 3;
+  text-indent: 2rem;
+  letter-spacing: 1px;
+  font-weight: 100;
+}
+form label,
+form h2 span:first-child {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+  margin-right: 40px;
+  font-size: 1.2rem;
+}
+form p {
+  text-indent: 14rem;
+  text-align: left;
+  margin: 1rem 0 2rem 0;
+  padding: 0;
+  font-size: 1.2rem;
+}
+form fieldset#password {
+  border-top: 1px solid #d1d1d1;
+  border-bottom: 1px solid #d1d1d1;
+  background-color: #eeeeee;
+  padding: 1rem 0;
+}
 menu {
   width: 20vw;
-  background-color: black;
   float: left;
 }
 textarea {

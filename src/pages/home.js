@@ -67,7 +67,7 @@
         if ( "register" in req.body ){
             this.register(...arguments).then( function(){
 
-                configVars.registerSuccessText = util.format( configVars.lang.registerSuccessText, req.body.username );
+                configVars.notifySuccess = util.format( configVars.lang.registerSuccessText, req.body.username );
                 res.render( "home", configVars );
             }).catch(function(){
 
@@ -84,7 +84,7 @@
                     res.render("authHome", configVars);
                 }).catch(function () {
 
-                    configVars.loginFailText = configVars.lang.loginFailText;
+                    configVars.notifyFail = configVars.lang.loginFailText;
                     res.render("home", configVars);
                 });
 
